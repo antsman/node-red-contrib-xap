@@ -55,7 +55,7 @@
     <div class="form-row">
         <label>&nbsp;</label>
         <input type="checkbox" checked value="1" id="node-input-showcount" style="display: inline-block; width: auto; vertical-align: top;">
-        <label for="node-input-showcount" style="width: 70%;"> Show message count under node?</label>
+        <label for="node-input-showcount" style="width: 70%;"> Show message count as node status</label>
     </div>
     <div class="form-tips">Tip: leave broadcast address and port blank to use defaults.</div>
 </script>
@@ -63,8 +63,8 @@
 <script type="text/x-red" data-help-name="xap out">
     <p>This node broadcasts <b>msg.payload</b> as xAP message to the designated udp address and port.</p>
     <p>You can also pass in a <b>msg.options</b> object instead of static values.</p><pre>{class: 'xap-temp.notification', source: 'ACME.thermostat.lounge', uid: 'FF123400', messagetype: 'temp.current', broadcast: '192.168.1.255', port: '3639'}</pre>
-    <p>Broadcast address defaults to global 255.255.255.255, port default is 3639.</p><b>Note</b>: static values have precedence.</p>
-    <p>Static Message value needs to be well formed JSON string like</p><pre>{"temp": "25", "units": "C"}</pre>.
+    <p>Broadcast address defaults to global 255.255.255.255, port default is 3639.</p>
+    <p>Static Message value needs to be well formed JSON string like</p><pre>{"temp": "25", "units": "C"}</pre><b>Note</b>: static values have precedence.</p>
     <p>Given <b>msg.payload</b> contains </p><pre>{temp: '25', units: 'C'}</pre>
     <p>then broadcasted xAP message will look as below.</p><pre>xap-header
 {
