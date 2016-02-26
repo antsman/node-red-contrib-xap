@@ -3,7 +3,7 @@
   "version": "0.0.3",
   "description": "A Node-RED node to send xAP status and control messages",
   "main": "xap.js",
-  "homepage": "https://github.com/antsman/node-red-contrib-xap",
+  "homepage": "https://github.com/antsman/node-red-contrib-xap/",
   "keywords": [
     "node-red",
     "xap"
