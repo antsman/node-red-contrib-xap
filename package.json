@@ -14,7 +14,7 @@
     }
   },
   "dependencies": {
-    "xap": "0.0.5"
+    "xap": "0.1.0"
   },
   "repository": {
     "type": "git",
