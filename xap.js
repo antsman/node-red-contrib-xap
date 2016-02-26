@@ -21,27 +21,26 @@ module.exports = function(RED) {
     // The Output Node
     function xAPout(n) {
         RED.nodes.createNode(this, n);
-        this.name = n.name;
         var node = this;
         if (n.showcount) {
             var count = 0;
         } else {
-            node.status({});
+            this.status({});
         }
 
-        node.on("input", function(msg) {
+        this.on("input", function(msg) {
+            var uid = n.uid || msg.options.uid;
             var cls = n.class || msg.options.class;
             var src = n.source || msg.options.source;
             var tgt = n.target || msg.options.target;
-            var uid = n.uid || msg.options.uid;
             var mgt = n.messagetype || msg.options.messagetype;
             var brc = n.broadcast || msg.options.broadcast;
             var prt = n.port || msg.options.port;
 /*
+            node.log(RED._("uid " + uid));
             node.log(RED._("cls " + cls));
             node.log(RED._("src " + src));
             node.log(RED._("tgt " + tgt));
-            node.log(RED._("uid " + uid));
 */
             var message = {};
             if (n.message != "") {
@@ -49,7 +48,7 @@ module.exports = function(RED) {
             } else if (msg.hasOwnProperty("payload")) {
                 message = msg.payload;
             }
-            var options = {'class': cls, 'source': src, 'target': tgt, 'uid': uid, 'broadcast': brc, 'port': prt};
+            var options = {'uid': uid, 'class': cls, 'source': src, 'target': tgt, 'broadcast': brc, 'port': prt};
             var xAPBroadcaster = new xap.XAPBroadcaster(options);
             xAPBroadcaster.send(mgt, message);
 /*
@@ -57,7 +56,7 @@ module.exports = function(RED) {
             node.log(RED._("xap.msg " + JSON.stringify(message)));
 */
             if (n.showcount) {
-                node.status({ fill: "grey", shape: "ring", text: "count: " + ++count });
+                this.status({fill: "grey", shape: "ring", text: "count: " + ++count});
             }
         });
     }
