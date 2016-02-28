@@ -12,6 +12,6 @@ npm install node-red-contrib-xap
 
 One may find this useful if you are into home automation and using [xAP](http://www.dbzoo.com/livebox/xap_getting_started) enabled devices.
 
-![node-red-shot](antsman.github.io/node-red-contrib-xap/node-red-xap-cmd.png)
+![node-red-shot](http://antsman.github.io/node-red-contrib-xap/node-red-xap-cmd.png)
 
 ![xfx-viewer-shot](http://antsman.github.io/node-red-contrib-xap/xap-message-xap-cmd.png)
