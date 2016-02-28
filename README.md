@@ -14,4 +14,4 @@ One may find this useful if you are into home automation and using [xAP](http://
 
 ![node-red-shot](http://antsman.github.io/node-red-contrib-xap/node-red-xap-cmd.png)
 
-![xfx-viewer-shot](http://antsman.github.io/node-red-contrib-xap/xap-message-xap-cmd.png)
+![xfx-viewer-shot](http://antsman.github.io/node-red-contrib-xap/xfx-viewer-xap-cmd.png)
